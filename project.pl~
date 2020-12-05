@@ -1,0 +1,406 @@
+lpg(X,simple):-M is 0.01*X, write('LPG:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+gasolin(X,simple):-M is 0.15*X, write('Gasolin:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+kerosene(X,simple):-M is 0.25*X, write('Kerosene:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+diesel(X,simple):-M is 0.21*X, write('Diesel:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+furnace_oil(X,simple):-M is 0.38*X, write('Furnace oil:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+bitumen(X,simple):-M is 0.00*X, write('Bitumin:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+coke(X,simple):-M is 0.00*X, write('Coke:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+
+
+
+lpg(X,medium):-M is 0.015*X, write('LPG:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+gasolin(X,medium):-M is 0.155*X, write('Gasolin:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+kerosene(X,medium):-M is 0.25*X, write('Kerosene:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+diesel(X,medium):-M is 0.28*X, write('Diesel:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+furnace_oil(X,medium):-M is 0.22*X, write('Furnace oil:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+bitumen(X,medium):-M is 0.08*X, write('Bitumin:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+coke(X,medium):-M is 0.00*X, write('Coke:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+
+
+
+
+lpg(X,full):-M is 0.02*X, write('LPG:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+gasolin(X,full):-M is 0.19*X, write('Gasolin:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+kerosene(X,full):-M is 0.28*X, write('Kerosene:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+diesel(X,full):-M is 0.34*X, write('Diesel:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+furnace_oil(X,full):-M is 0.08*X, write('Furnace oil:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+bitumen(X,full):-M is 0.08*X, write('Bitumin:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+coke(X,full):-M is 0.01*X, write('Coke:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+
+
+
+
+input:-write('enter the amount of crude oil'),nl,
+    read(Amount),nl,
+    write('enter the type of refinery:'),nl,
+    write('(a)simple'),nl,
+    write('(b)medium'),nl,
+    write('(c)full'),nl,
+    read(Type),nl,
+    write('the elements of'),write(' '),write(Type),write('refinery:'),nl,
+    lpg(Amount,Type),
+    gasolin(Amount,Type),
+    kerosene(Amount,Type),
+    diesel(Amount,Type),
+    furnace_oil(Amount,Type),
+    bitumen(Amount,Type),
+    coke(Amount,Type).
+
+
+lpg1(X,alc):-M is 0.01*X, write('LPG:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+gasolin1(X,alc):-M is 0.12*X, write('Gasolin:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+kerosene1(X,alc):-M is 0.22*X, write('Kerosene:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+diesel1(X,alc):-M is 0.21*X, write('Diesel:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+residue1(X,alc):- M is 0.411*X , write('Residue:'), write(' '), write(M), write(' '), write('litre'),nl.
+
+
+lpg1(X,murban):-M is 0.01*X, write('LPG:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+gasolin1(X,murban):-M is 0.182*X, write('Gasolin:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+kerosene1(X,murban):-M is 0.26*X, write('Kerosene:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+diesel1(X,murban):-M is 0.209*X, write('Diesel:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+residue1(X,murban):- M is  0.311*X , write('Residue:'), write(' '), write(M), write(' '), write('litre'),nl.
+
+input_type:- write('enter the amount of crude oil'),nl,
+    read(Amount),nl,
+     write('enter the type of Crude Oil:'),nl,
+    write('(a)ALC(Arab Light Crude)'),nl,
+    write('(b)Murban Oil'),nl, read(Type), nl,
+    write('the elements of'),write(' '),write(Type),write('Crude Oil:'),nl,
+    lpg1(Amount,Type),
+    gasolin1(Amount,Type),
+    kerosene1(Amount,Type),
+    diesel1(Amount,Type),
+   residue1(Amount,Type).
+
+cost(X):-   write('Cost of Crude Oil:'), write(' '), C is  ((X*6590.43)/159), format( '~2f', C ), write('Tk'),nl,
+     write('Cost of Production:'), write(' '), P is ((X*6685.78)/159), format( '~2f', P ),write('Tk'),nl,
+    write('Total Operating cost for refinery:'), write(' '), T is ((X*95.35)/159), format( '~2f', T ),write('Tk'),nl.
+
+
+input_cost:-  write('enter the amount of crude oil'),nl,
+    read(Amount),nl,
+     write('Related Costs:'),nl,
+     cost(Amount),nl.
+
+lpgtotal(X,simple):-M is ((100/1)*X), write('For LPG:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+gasolintotal(X,simple):-M is ((100/15)*X), write('For Gasolin:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+kerosenetotal(X,simple):-M is ((100/25)*X), write('For Kerosene:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+dieseltotal(X,simple):-M is ((100/21)*X), write('For Diesel:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+furnace_oiltotal(X,simple):-M is ((100/38)*X), write('For Furnace oil:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+bitumentotal(X,simple):-write('For Bitumin:'),write(' '),
+    write('Not Applicable'),nl.
+
+coketotal(X,simple):-write('For Coke:'),write(' '),
+    write('Not Applicable'),nl.
+
+
+
+
+lpgtotal(X,medium):-M is ((100/15)*X), write('For LPG:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+gasolintotal(X,medium):-M is ((100/15.5)*X), write('For Gasolin:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+kerosenetotal(X,medium):-M is ((100/25)*X), write('For Kerosene:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+dieseltotal(X,medium):-M is ((100/28)*X), write('For Diesel:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+furnace_oiltotal(X,medium):-M is ((100/22)*X), write('For Furnace oil:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+bitumentotal(X,medium):-M is ((100/8)*X), write('For Bitumin:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+coketotal(X,medium):-write('For Coke:'),write(' '),
+    write('Not Applicable'),nl.
+
+
+
+
+
+lpgtotal(X,full):-M is ((100/2)*X), write('For LPG:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+gasolintotal(X,full):-M is ((100/19)*X), write('For Gasolin:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+kerosenetotal(X,full):-M is ((100/28)*X), write('For Kerosene:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+dieseltotal(X,full):-M is ((100/34)*X), write('For Diesel:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+furnace_oiltotal(X,full):-M is ((100/8)*X), write('For Furnace oil:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+bitumentotal(X,full):-M is ((100/8)*X), write('For Bitumin:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+coketotal(X,full):-M is ((100/1)*X), write('For Coke:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+
+
+
+
+input_amount:-write('enter the amount of element'),nl,
+    read(Amount),nl,
+    write('enter the type of refinery:'),nl,
+    write('(a)simple'),nl,
+    write('(b)medium'),nl,
+    write('(c)full'),nl,
+    read(Type),nl,
+    write('the amount of total crude oil for each element'),write(' '),write(Type),write('refinery:'),nl,
+    lpgtotal(Amount,Type),
+    gasolintotal(Amount,Type),
+    kerosenetotal(Amount,Type),
+    dieseltotal(Amount,Type),
+    furnace_oiltotal(Amount,Type),
+    bitumentotal(Amount,Type),
+    coketotal(Amount,Type).
+
+
+lpgtotal1(X,alc):-M is ((100/1)*X), write('For LPG:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+gasolintotal1(X,alc):-M is ((100/12)*X), write('For Gasolin:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+kerosenetotal1(X,alc):-M is ((100/22)*X), write('For Kerosene:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+dieseltotal1(X,alc):-M is ((100/21.1)*X), write('For Diesel:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+
+
+lpgtotal1(X,murban):-M is ((100/1)*X), write('For LPG:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+gasolintotal1(X,murban):-M is ((100/18.2)*X), write('For Gasolin:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+kerosenetotal1(X,murban):-M is ((100/26)*X), write('For Kerosene:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+dieseltotal1(X,murban):-M is ((100/20.9)*X), write('For Diesel:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+
+
+input_type_amount:- write('enter the amount of element'),nl,
+    read(Amount),nl,
+     write('enter the type of Crude Oil:'),nl,
+    write('(a)ALC(Arab Light Crude)'),nl,
+    write('(b)Murban Oil'),nl, read(Type), nl,
+    write('the amount of total crude oil for each element'),write(' '),write(Type),write('Crude Oil:'),nl,
+    lpgtotal1(Amount,Type),
+    gasolintotal1(Amount,Type),
+    kerosenetotal1(Amount,Type),
+    dieseltotal1(Amount,Type).
+
+
+totalnew(X,lpg,simple):-M is ((100/1)*X), write('Total crude oil needed:'),write(' '),write(M),write(' '),write('litre'),nl.
+
+totalnew(X,gasolin,simple):-M is ((100/15)*X), write('Total crude oil needed:'),write(' '),write(M),write(' '),write('litre'),nl.
+
+totalnew(X,kerosene,simple):-M is ((100/25)*X), write('Total crude oil needed:'),write(' '),write(M),write(' '),write('litre'),nl.
+
+totalnew(X,diesel,simple):-M is ((100/21)*X), write('Total crude oil needed:'),write(' '),write(M),write(' '),write('litre'),nl.
+
+totalnew(X,furnace_oil,simple):-M is ((100/38)*X), write('Total crude oil needed:'),write(' '), write(M),write(' '),write('litre'),nl.
+
+totalnew(X,bitumin,simple):-write('For Bitumin:'),write(' '),write('Not Applicable'),nl.
+
+totalnew(X,coke,simple):-write('For Coke:'),write(' '),write('Not Applicable'),nl.
+
+
+
+
+totalnew(X,lpg,medium):-M is ((100/15)*X), write('Total crude oil needed:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+totalnew(X,gasolin,medium):-M is ((100/15.5)*X), write('Total crude oil needed:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+totalnew(X,kerosene,medium):-M is ((100/25)*X), write('Total crude oil needed:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+totalnew(X,diesel,medium):-M is ((100/28)*X), write('Total crude oil needed:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+totalnew(X,furnace_oil,medium):-M is ((100/22)*X), write('Total crude oil needed:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+totalnew(X,bitumin,medium):-M is ((100/8)*X), write('For Bitumin:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+totalnew(X,coke,medium):-write('For Coke:'),write(' '),
+    write('Not Applicable'),nl.
+
+
+
+
+
+totalnew(X,lpg,full):-M is ((100/2)*X), write('Total crude oil needed:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+totalnew(X,gasolin,full):-M is ((100/19)*X), write('Total crude oil needed:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+totalnew(X,kerosene,full):-M is ((100/28)*X), write('Total crude oil needed:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+totalnew(X,diesel,full):-M is ((100/34)*X), write('Total crude oil needed:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+totalnew(X,furnace_oil,full):-M is ((100/8)*X), write('Total crude oil needed:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+totalnew(X,bitumin,full):-M is ((100/8)*X), write('Total crude oil needed:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+totalnew(X,coke,full):-M is ((100/1)*X), write('Total crude oil needed:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+
+
+
+
+input_specific_element_refinery:-write('enter the element'),nl,
+    read(Element),nl,
+    write('enter the amount of element'),nl,
+    read(Amount),nl,
+    write('enter the type of refinery:'),nl,
+    write('(a)simple'),nl,
+    write('(b)medium'),nl,
+    write('(c)full'),nl,
+    read(Type),nl,
+    write('the amount of total crude oil for'),write(' '),write(Element),write(' and '),write(Type),write(' refinery:'),nl,
+   % lpgtotalnew(Amount,Element,Type),
+   % gasolintotalnew(Amount,Element,Type),
+   % kerosenetotalnew(Amount,Element,Type),
+   % dieseltotalnew(Amount,Element,Type),
+   % furnace_oiltotalnew(Amount,Element,Type),
+  %  bitumentotalnew(Amount,Element,Type),
+   % coketotalnew(Amount,Element,Type).
+   totalnew(Amount,Element,Type).
+
+
+totalnew1(X,lpg,alc):-M is ((100/1)*X), write('Total crude oil needed:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+totalnew1(X,gasolin,alc):-M is ((100/12)*X), write('Total crude oil needed:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+totalnew1(X,kerosene,alc):-M is ((100/22)*X), write('Total crude oil needed:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+totalnew1(X,diesel,alc):-M is ((100/21.1)*X), write('Total crude oil needed:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+
+
+totalnew1(X,lpg,murban):-M is ((100/1)*X), write('Total crude oil needed:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+totalnew1(X,gasolin,murban):-M is ((100/18.2)*X), write('Total crude oil needed:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+totalnew1(X,kerosene,murban):-M is ((100/26)*X), write('Total crude oil needed:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+totalnew1(X,diesel,murban):-M is ((100/20.9)*X), write('Total crude oil needed:'),write(' '),
+    write(M),write(' '),write('litre'),nl.
+
+
+
+input_specific_element_crudeoil:- write('enter the element'),nl,
+    read(Element),nl,
+    write('enter the amount of element'),nl,
+    read(Amount),nl,
+    write('enter the type of Crude Oil:'),nl,
+    write('(a)ALC(Arab Light Crude)'),nl,
+    write('(b)Murban Oil'),nl, read(Type), nl,
+    write('the amount of total crude oil for '),write(Element),write(' and '),write(Type),write('Crude Oil:'),nl,
+   % lpgtotalnew1(Amount,Element,Type),
+   % gasolintotalnew1(Amount,Element,Type),
+    %kerosenetotalnew1(Amount,Element,Type),
+   % dieseltotalnew1(Amount,Element,Type).
+   totalnew1(Amount,Element,Type).
+
+
+
+
+
+
